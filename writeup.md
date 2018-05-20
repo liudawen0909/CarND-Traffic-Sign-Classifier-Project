@@ -21,7 +21,6 @@ The goals / steps of this project are the following:
 
 [image1]: ./img_report/CountingOfTrafficSigns.jpg "Counting_of_Traffic_Signs"
 [image2]: ./img_report/grayScaling.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./mysigns/1.png "Traffic Sign 1"
 [image5]: ./mysigns/2.png "Traffic Sign 2"
 [image6]: ./mysigns/3.png "Traffic Sign 3"
@@ -71,15 +70,6 @@ Here is an example of a traffic sign image before and after grayscaling.
 ![alt text][image2]
 
 As a last step, I normalized the image data because it will good for the data training and increase the acurrcy of the result.
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -165,20 +155,20 @@ The code for making predictions on my final model is located in the 11th cell of
 
 For the first image, the model is relatively sure that this is a Bumpy road sign (96.57%), and the image does contain a Bumpy road sign. The top five soft max probabilities were
 
-|     Prediction	        			| Probability         	|
-|Bumpy road| 96.57%|
-|General caution| 2.28%|
-|Dangerous curve to the right| 0.56%|
-|Road work| 0.26%|
-|Bicycles crossing| 0.25%|
+| Prediction   | Probability         	|
+| Bumpy road   | 96.57%.   |
+| General caution | 2.28%. |
+| Dangerous curve to the right | 0.56%. |
+| Road work | 0.26%. |
+| Bicycles crossing  | 0.25%. |
 
 For the second image
-|     Prediction	        			| Probability         	|
-|Ahead only| 100.00%|
-|Road work| 0.00%|
-|Turn right ahead| 0.00%|
-|Bicycles crossing| 0.00%|
-|Go straight or right| 0.00%|
+| Prediction	 | Probability  |
+| Ahead only  | 100.00% |
+| Road work   |  0.00% |
+| Turn right ahead |  0.00%  |
+| Bicycles crossing  | 0.00%  |
+| Go straight or right | 0.00%  |
 
 For the third image
 |     Prediction	        			| Probability         	|
@@ -189,28 +179,28 @@ For the third image
 |Speed limit (70km/h)| 0.00%|
 
 For the fourth image
-|     Prediction	        			| Probability         	|
-|General caution| 100.00%|
-|Traffic signals| 0.00%|
-|Pedestrians|0.00%|
-|Right-of-way at the next intersection| 0.00%|
-|Road work| 0.00%|
+| Prediction	 	| Probability  	|
+| General caution | 100.00% |
+| Traffic signals | 0.00% |
+| Pedestrians | 0.00% |
+| Right-of-way at the next intersection| 0.00% |
+| Road work | 0.00% |
 
 For the fifth image
-|     Prediction	        			| Probability         	|
-|Speed limit (30km/h)| 100.00%|
-|Speed limit (50km/h)| 0.00%|
-|Right-of-way at the next intersection| 0.00%|
-|Roundabout mandatory| 0.00%|
-|Speed limit (60km/h)| 0.00%|
+| Prediction	        			| Probability         	|
+| Speed limit (30km/h) | 100.00% |
+| Speed limit (50km/h) | 0.00% |
+| Right-of-way at the next intersection | 0.00% |
+| Roundabout mandatory | 0.00% |
+| Speed limit (60km/h) | 0.00% |
 
 For the sixth image
-|     Prediction	        			| Probability         	|
-|Go straight or left| 100.00%|
-|Dangerous curve to the right| 0.00%|
-|Roundabout mandatory| 0.00%|
-|No passing for vehicles over 3.5 metric tons| 0.00%|
-|Keep right: 0.00%|
+| Prediction	| Probability |
+| Go straight or left | 100.00% |
+| Dangerous curve to the right | 0.00% |
+| Roundabout mandatory | 0.00% |
+| No passing for vehicles over 3.5 metric tons | 0.00% |
+| Keep right | 0.00% |
 
 The third image actually should be no vehicles, but in prediction it shows Speed limit (50km/h), means the model still have problem need to speed more effect on the data processing and achitecture chosen.
 
