@@ -116,8 +116,8 @@ I remember in previous class, it mentioned to tune learning rate in case of accu
 
 My final model results were:
 * training set accuracy of 100%
-* validation set accuracy of 93.9% 
-* test set accuracy of 83.3%
+* validation set accuracy of 93.1% 
+* test set accuracy of 92.1%
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -170,7 +170,7 @@ Here are the results of the prediction:
 | Go straight or left   | Go straight or left  |
 
 
-The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 83.3%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 83.3%. This compares favorably to the accuracy on the test set of 92.1%. This is lower, however, I found the issue is because in the training set all the "No vehicles" sign is tri-angle, but my test image is a circle. So, that could be the reason why the model cannot identify this traffic sign. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
