@@ -74,6 +74,8 @@ As a last step, I normalized the image data because it will good for the data tr
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
+
+
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
@@ -101,6 +103,17 @@ To train the model I used 30 epochs, a batch size of 100 and a learning rate of 
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
+In order to get a good accuracy,
+First thing I tried is applying some data preprocessing method the image data, I used gray scaling and mean value for normalized data. However the result still not good.
+
+Then I tried to spend more effert on the image data processing. Because after I plot out some of the traffic signs picture I found that the quality of some pictures is quite low, some pictures are quite dark and some are quite bright. I go through the lessons again, I only saw there is a method dropout seems can solve this problem. However after apply the dropout method, the result seems not change so much. Maybe my implementation is wrong. Anyway, in the end I didnt choose that method.
+
+Then I tried to increase the number of epochs, it looks better. After around 20 times training, the accurcy arrived to around 0.91. However, if I keep increase the number of epochs, I found that the value of accurcy is keep jumping.
+
+I remember in previous class, it mentioned to tune learning rate in case of accurcy keep jumping. Then I tried to decrease the learning rate, after I set the learning rate to around 0.0009, the result looks quite good. The I choose this as the learning rate.
+
+
+
 My final model results were:
 * training set accuracy of 100%
 * validation set accuracy of 93.9% 
@@ -108,18 +121,28 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+
 I chose the architecture which used in the Lenet project, because this architecture is quite straight forward to me. And It also quite suitable for this project.
+
 * What were some problems with the initial architecture?
+
 In the training stage the accurcy keep jumping, for example in one epoch the accurcy already arrived 0.94, but in next epoch it jump back to 0.91.
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+
 * Which parameters were tuned? How were they adjusted and why?
+
 I decrease the learning rate to 0.0009, and increase the epochs. In this way, the accurcy will be more stable at the end of training stage. 
+
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
 If a well known architecture was chosen:
 * What architecture was chosen?
+I choose the Lenet architecture
 * Why did you believe it would be relevant to the traffic sign application?
+Because in previous lesson, I learned that, it work well for numbers.
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+I think for training set it should be quite high, but validation set and test set could be lower, but the accurcy value should be quite close for validation set and test set.
  
 
 ### Test a Model on New Images
@@ -131,7 +154,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8] ![alt text][image9]
 
-The first image might be difficult to classify because ...
+At the beginning, I thought use a high quality picture will give me a higher accurcy of the result. However, in the end I found it is not like that, maybe because in the training set most of the image quality is not so high. I think that could be one of the reason why I test my model on the new image the accurcy is not good. 
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -156,6 +179,7 @@ The code for making predictions on my final model is located in the 11th cell of
 For the first image, the model is relatively sure that this is a Bumpy road sign (96.57%), and the image does contain a Bumpy road sign. The top five soft max probabilities were
 
 | Prediction   | Probability         	|
+|:---------------------:|:---------------------------------------------:| 
 | Bumpy road   | 96.57%.   |
 | General caution | 2.28%. |
 | Dangerous curve to the right | 0.56%. |
@@ -163,7 +187,9 @@ For the first image, the model is relatively sure that this is a Bumpy road sign
 | Bicycles crossing  | 0.25%. |
 
 For the second image
+
 | Prediction	 | Probability  |
+|:---------------------:|:---------------------------------------------:| 
 | Ahead only  | 100.00% |
 | Road work   |  0.00% |
 | Turn right ahead |  0.00%  |
@@ -171,7 +197,9 @@ For the second image
 | Go straight or right | 0.00%  |
 
 For the third image
+
 |     Prediction	        			| Probability         	|
+|:---------------------:|:---------------------------------------------:| 
 |Speed limit (50km/h)| 97.36%|
 |Speed limit (30km/h)| 2.45%|
 |No vehicles| 0.15%|
@@ -179,7 +207,9 @@ For the third image
 |Speed limit (70km/h)| 0.00%|
 
 For the fourth image
+
 | Prediction	 	| Probability  	|
+|:---------------------:|:---------------------------------------------:| 
 | General caution | 100.00% |
 | Traffic signals | 0.00% |
 | Pedestrians | 0.00% |
@@ -187,7 +217,9 @@ For the fourth image
 | Road work | 0.00% |
 
 For the fifth image
+
 | Prediction	        			| Probability         	|
+|:---------------------:|:---------------------------------------------:| 
 | Speed limit (30km/h) | 100.00% |
 | Speed limit (50km/h) | 0.00% |
 | Right-of-way at the next intersection | 0.00% |
@@ -195,7 +227,9 @@ For the fifth image
 | Speed limit (60km/h) | 0.00% |
 
 For the sixth image
+
 | Prediction	| Probability |
+|:---------------------:|:---------------------------------------------:| 
 | Go straight or left | 100.00% |
 | Dangerous curve to the right | 0.00% |
 | Roundabout mandatory | 0.00% |
